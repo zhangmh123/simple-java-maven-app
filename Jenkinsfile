@@ -12,5 +12,10 @@
                 sh 'mvn -B -DskipTests clean package' 
             }
         }
+         stage('Test') {
+            steps {
+                echo 'testing application...'
+             }
+         }
     }
 }
