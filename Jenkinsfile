@@ -21,22 +21,16 @@
               steps{
                 script {
                     dockerImage = build(imagename)
-                  //dockerImage = docker.build imagename
                 }
               }
             }
             stage('Deploy Image') {
               steps{
-                script {
-                withRegistry('', registryCredential) {
-                   build(image[, args])
-                   dockerImage.push('v1')
-                }
-//                   docker.withRegistry( '', registryCredential ) {
-//                     dockerImage.push("$BUILD_NUMBER")
-//
-//                   }
-                }
+                    script {
+                        withRegistry('', registryCredential) {
+                        dockerImage.push('v1')
+                       }
+                    }
               }
             }
     }
