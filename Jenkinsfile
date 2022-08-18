@@ -20,18 +20,18 @@
         stage('Building image') {
               steps{
                 script {
-                    dockerImage = build(imagename)
+                    sh 'docker build -t zhangmh123/my-java-app:v1 .'
                 }
               }
-            }
-            stage('Deploy Image') {
-              steps{
-                    script {
-                        withRegistry('', registryCredential) {
-                        dockerImage.push('v1')
-                       }
-                    }
-              }
-            }
+         }
+//             stage('Deploy Image') {
+//               steps{
+//                     script {
+//                         withRegistry('', registryCredential) {
+//                         dockerImage.push('v1')
+//                        }
+//                     }
+//               }
+//             }
     }
 }
