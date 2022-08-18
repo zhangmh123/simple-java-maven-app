@@ -8,6 +8,7 @@
     stages {
         stage('Build') { 
             steps {
+                echo 'building application...'
                 sh 'mvn -B -DskipTests clean package' 
             }
         }
