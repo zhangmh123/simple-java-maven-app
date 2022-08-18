@@ -19,13 +19,14 @@
                 sh 'mvn -B -DskipTests clean package' 
             }
         }
-        stage('Building image') {
+        stage('Building Docker image') {
          steps{
-             docker.withRegistry('https://hub.docker.com', "docker-hub-credentials") {
-                         def customImage = docker.build("${imagename}:${env.BUILD_ID}")
-                         /* Push the container to the custom Registry */
-                         customImage.push()
-              }
+             dockerImage = docker.build("${imagename}:${env.BUILD_ID}")
+//              docker.withRegistry('https://hub.docker.com', "docker-hub-credentials") {
+//                          def customImage = docker.build("${imagename}:${env.BUILD_ID}")
+//                          /* Push the container to the custom Registry */
+//                          customImage.push()
+//               }
          }
 
 //               steps{
