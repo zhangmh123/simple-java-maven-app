@@ -21,8 +21,7 @@
         }
         stage('Building image') {
          steps{
-             docker.withRegistry('', 'registryCredential') {
-
+             docker.withRegistry('https://hub.docker.com', "${registryCredential}") {
                          def customImage = docker.build("${imagename}:${env.BUILD_ID}")
 
                          /* Push the container to the custom Registry */
