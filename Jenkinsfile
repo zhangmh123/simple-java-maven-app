@@ -19,9 +19,7 @@
         }
         stage('Building image') {
               steps{
-                script {
-                    sh 'docker build -t zhangmh123/my-java-app:v1 .'
-                }
+                sh 'docker build -t zhangmh123/my-java-app:v1 .'
               }
          }
 //             stage('Deploy Image') {
