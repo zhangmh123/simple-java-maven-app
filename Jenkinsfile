@@ -21,7 +21,7 @@
         }
         stage('Building image') {
          steps{
-             docker.withRegistry('https://hub.docker.com/', 'registryCredential') {
+             docker.withRegistry('https://hub.docker.com', 'registryCredential') {
 
                          def customImage = docker.build("${imagename}:${env.BUILD_ID}")
 
