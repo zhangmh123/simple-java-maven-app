@@ -20,13 +20,16 @@
             }
         }
         stage('Building image') {
-         docker.withRegistry('https://hub.docker.com/', 'registryCredential') {
+         steps{
+             docker.withRegistry('https://hub.docker.com/', 'registryCredential') {
 
-                def customImage = docker.build("${imagename}:${env.BUILD_ID}")
+                         def customImage = docker.build("${imagename}:${env.BUILD_ID}")
 
-                /* Push the container to the custom Registry */
-                customImage.push()
-            }
+                         /* Push the container to the custom Registry */
+                         customImage.push()
+              }
+         }
+
 //               steps{
 //                 sh 'docker build -t zhangmh123/my-java-app:v1 .'
 //               }
