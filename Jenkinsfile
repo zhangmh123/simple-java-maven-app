@@ -17,10 +17,10 @@ pipeline {
         sh 'node --version'
       }
     }
-     stage("Docker build"){
+     stage('Docker build'){
          steps {
-                 sh 'docker version'
-               }
+           sh 'docker version'
+         }
 
      }
   }
