@@ -10,7 +10,7 @@
             args '-v /root/.m2:/root/.m2'
         }
     }
-
+    tool name: 'docker', type: 'dockerTool'
     stages {
         stage('Maven Build') {
             steps {
