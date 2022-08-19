@@ -22,7 +22,8 @@
         stage('Building Docker image') {
          steps{
                 echo "building image ${imagename}:${env.BUILD_ID}..."
-                def customImage = docker.build("${imagename}:${env.BUILD_ID}")
+                sh 'docker --version'
+                //def customImage = docker.build("${imagename}:${env.BUILD_ID}")
                //sh 'docker build -t zhangmh123/my-java-app:v1 .'
 //              withDockerRegistry(credentialsId: 'docker-hub-credentials', url: 'https://hub.docker.com') {
 //                   def customImage = docker.build("my-image:${env.BUILD_ID}")
