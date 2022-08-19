@@ -21,16 +21,13 @@
         }
         stage('Building Docker image') {
          steps{
-               sh 'docker build -t zhangmh123/my-java-app:v1 .'
-//             node {
-//                        echo "building image ${imagename}:${env.BUILD_ID}..."
-//                        def customImage = docker.build("${imagename}:${env.BUILD_ID}")
-//             }
+                echo "building image ${imagename}:${env.BUILD_ID}..."
+                def customImage = docker.build("${imagename}:${env.BUILD_ID}")
+               //sh 'docker build -t zhangmh123/my-java-app:v1 .'
 //              withDockerRegistry(credentialsId: 'docker-hub-credentials', url: 'https://hub.docker.com') {
 //                   def customImage = docker.build("my-image:${env.BUILD_ID}")
 //                   //def customImage = docker.build("${imagename}:${env.BUILD_ID}")
 //              }
-             //dockerImage = docker.build("${imagename}:${env.BUILD_ID}")
 //              docker.withRegistry('https://hub.docker.com', "docker-hub-credentials") {
 //                          def customImage = docker.build("${imagename}:${env.BUILD_ID}")
 //                          /* Push the container to the custom Registry */
