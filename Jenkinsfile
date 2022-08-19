@@ -4,6 +4,9 @@
         registryCredential = 'docker-hub-credentials'
         dockerImage = ''
       }
+       tools {
+            docker "docker"
+        }
     agent {
         docker {
             image 'maven:3.6.1-jdk-8-alpine'
