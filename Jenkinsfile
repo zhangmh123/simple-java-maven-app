@@ -7,12 +7,11 @@ pipeline {
             docker { image 'maven:3.6.1-jdk-8-alpine' }
           }
           steps {
-            sh 'mvn --version'
+            sh 'mvn clean package'
           }
     }
      stage('Docker build image'){
          steps {
-           sh 'docker version'
            sh 'docker build -t my-java-app:v1 .'
          }
      }
