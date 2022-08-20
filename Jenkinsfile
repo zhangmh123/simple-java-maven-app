@@ -1,10 +1,15 @@
 pipeline {
   agent any
   stages {
-
+      stage("Git Clone"){
+          git credentialsId: '', url: '/var/jenkins_home/GitHub/simple-java-maven-app'
+      }
     stage('Back-end') {
           agent {
-            docker { image 'maven:3.6.1-jdk-8-alpine' }
+            docker {
+               image 'maven:3.6.1-jdk-8-alpine'
+               args '-v /root/.m2:/root/.m2'
+            }
           }
           steps {
             sh 'mvn clean package'
