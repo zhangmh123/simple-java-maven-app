@@ -35,6 +35,14 @@
     <version>2.5.4</version>
     <scope>test</scope>
 </dependency>
+<!-- https://mvnrepository.com/artifact/org.sonarsource.scanner.gradle/sonarqube-gradle-plugin -->
+<dependency>
+    <groupId>org.sonarsource.scanner.gradle</groupId>
+    <artifactId>sonarqube-gradle-plugin</artifactId>
+    <version>3.3</version>
+    <scope>runtime</scope>
+</dependency>
+
    <dependency>
     <groupId>io.spring.gradle</groupId>
     <artifactId>dependency-management-plugin</artifactId>
@@ -95,6 +103,11 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+         <groupId>org.sonarqube</groupId>
+         <artifactId>org.sonarqube.gradle.plugin</artifactId>
+          <version>3.3</version>
       </plugin>
     </plugins>
   </build>
